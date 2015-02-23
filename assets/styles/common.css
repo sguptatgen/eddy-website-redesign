@@ -1,0 +1,95 @@
+@media (max-width: 992px) {
+	.eddy-sidebar {
+		display: none !important;
+	}
+}
+.eddy-banner.jumbotron, .eddy-footer.jumbotron {
+	text-align: center;
+	border-radius: 0px !important;
+	background-color: rgba(111,84,153,1);
+	color:rgba(255,255,255,0.6);
+	margin-bottom: 0px;
+}
+.eddy-banner.jumbotron h1 {
+	color:rgba(255,255,255,1);
+	font-size: 8em;
+}
+.eddy-navbar.navbar {
+	margin-bottom: 0px;
+	box-shadow:0px 1px 8px rgba(0,0,0,1);
+	z-index: 10;
+}
+.eddy-banner.jumbotron a.eddy-link-to-research {
+	font-weight: 900;
+	color:rgba(255,255,255,0.6);
+}
+.eddy-content {
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+.eddy-sidebar ul.eddy-sidebar-fixed {
+	position: fixed;
+	top:20px;
+}
+.eddy-sidebar ul.eddy-sidebar-nav{
+	list-style-type: none;
+}
+.eddy-sidebar ul.eddy-sidebar-nav a.eddy-sidebar-nav-link li {
+	padding: 8px 5px 8px 10px;
+	font-weight: 900;
+}
+.eddy-sidebar ul.eddy-sidebar-nav a.eddy-sidebar-nav-link li:hover {
+	background-color: rgba(111,84,153,1);
+	border-radius: 3px;
+}
+.eddy-sidebar ul.eddy-sidebar-nav a.eddy-sidebar-nav-link{
+	color: rgba(100,100,100,1);
+}
+.eddy-sidebar ul.eddy-sidebar-nav a.eddy-sidebar-nav-link:hover{
+	color:rgba(255,255,255,0.8);
+	text-decoration: none;
+}
+.eddy-mainbar-section h1.eddy-mainbar-section-title a {
+	color:rgba(0,0,0,1);
+}
+.eddy-mainbar-section h1.eddy-mainbar-section-title a:hover{
+	text-decoration: none;
+}
+a.eddy-download-link {
+	background-color:rgba(0,0,0,0);
+	border:1px solid rgba(111,84,153,1);
+	color:rgba(111,84,153,1);
+}
+a.eddy-download-link:hover {
+	background-color:rgba(111,84,153,1);
+	border:1px solid rgba(111,84,153,1);
+	color:rgba(255,255,255,1);
+}
+.eddy-download-module-small.row {
+	margin: 5px 0px;
+}
+.eddy-download-link-small {
+	padding: 3px 6px;
+}
+.row.eddy-download-module-list .eddy-download-link {
+	margin:5px 0px;
+}
+h1.eddy-mainbar-section-title {
+	margin-top: 40px;
+}
+h3 {
+	margin-top: 15px;
+}
+.sp-eddy-mainbar-section-title-first {
+	margin-top:0px !important;
+}
+.eddy-table-o-variables {
+	margin-bottom: 15px;
+}
+.eddy-table-o-variables td{
+	padding: 5px;
+	border-right: 1px solid rgba(0,0,0,1);
+}
+td.sp-eddy-cli-variable-names {
+	width:60px;
+}

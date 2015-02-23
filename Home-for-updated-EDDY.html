@@ -1,0 +1,206 @@
+<!--Designed by Shrey Gupta from the Translational Genomics Research Institute in 2015 for Dr. Seungchan Kim. The following code was made using a template created by Shrey Gupta and protected under the GNU GPL v.2.0 License.-->
+
+<!--TODO: 
+	1) Add in Zero Clipboard for copying of code http://zeroclipboard.org/
+	2) Add the link to the previous version of EDDY.
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>EDDY: Evaluation of Dependency Differentiality</title>
+	<script src="./assets/jquery/jquery-1.x-min.js"></script>
+	<script src="./assets/bootstrap/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="./assets/bootstrap/css/bootstrap.min.css" />
+	<script src=".assets/scripts/common.js"></script>
+	<link rel="stylesheet" href="./assets/styles/common.css" />
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row">
+			<nav class="col-xs-12 navbar navbar-default eddy-navbar">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand" href="#">EDDY</a>
+					</div>
+					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+						<ul class="nav navbar-nav">
+							<li class="active"><a href="#">Some Link<span class="sr-only">(current)</span></a></li>
+							<li><a href="#">Some Link</a></li>
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Some Dropdown<span class="caret"></span></a>
+								<ul class="dropdown-menu" role="menu">
+									<li><a href="#">Some Link</a></li>
+									<li><a href="#">Some Link</a></li>
+									<li><a href="#">Some Link</a></li>
+									<li class="divider"></li>
+									<li><a href="#">Some Link</a></li>
+									<li class="divider"></li>
+									<li><a href="#">Some Link</a></li>
+								</ul>
+							</li>
+						</ul>
+						<ul class="nav navbar-nav navbar-right">
+							<li><a href="#">Some Link</a></li>
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Some Dropdown<span class="caret"></span></a>
+								<ul class="dropdown-menu" role="menu">
+									<li><a href="#">Some Link</a></li>
+									<li><a href="#">Some Link</a></li>
+									<li><a href="#">Some Link</a></li>
+									<li class="divider"></li>
+									<li><a href="#">Some Link</a></li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</nav>			
+		</div>
+		<div class="row">
+			<div class="jumbotron eddy-banner col-xs-12">
+				<h1>EDDY</h1>
+				<h2>Evaluation of Dependency Differentials</h2>
+				<p class="eddy-page-description">This page provides an updated Java implementation of an algorithm EDDY. The original version, which was presented in "<a href="http://nar.oxfordjournals.org/content/42/7/e60" class="eddy-link-to-research">EDDY: A novel statistical gene set test method to detect differential genetic dependencies</a>", can be found <a href="#">here</a>.</p>
+				<!--TODO: Add the link to the previous version of EDDY.-->
+			</div>
+		</div>
+		<div class="row">
+			<div class="container eddy-content">
+				<div class="row">
+					<div class="col-xs-12 col-md-9 eddy-mainbar">
+						<div class="eddy-mainbar-section">
+							<h1 class="eddy-mainbar-section-title sp-eddy-mainbar-section-title-first"><a name="what-is-eddy">What is EDDY?</a></h1>
+							<p>Identifying differential features between conditions is a popular approach to understanding molecular features and their mechanisms underlying a biological process of particular interest. Although many tests for identifying differential expression of gene or gene sets have been proposed, there was limited success in developing methods for differential interactions of genes between conditions because of its computational complexity. We present a method for Evaluation of Dependency DifferentialitY (EDDY), which is a statistical test for differential dependencies of a set of genes between two conditions. Unlike previous methods focused on differential expression of individual genes or correlation changes of individual gene-gene interactions, EDDY compares two conditions by evaluating the probability distributions of dependency networks from genes. The method has been evaluated and compared with other methods through simulation studies, and application to glioblastoma multiforme data resulted in informative cancer and glioblastoma multiforme subtype-related findings. The comparison with Gene Set Enrichment Analysis, a differential expression-based method, revealed that EDDY identifies the gene sets that are complementary to those identified by Gene Set Enrichment Analysis. EDDY also showed much lower false positives than Gene Set Co-expression Analysis, a method based on correlation changes of individual gene-gene interactions, thus providing more informative results. The Java implementation of the algorithm is freely available to noncommercial users.</p>
+						</div>
+						<div class="eddy-mainbar-section">
+							<h1 class="eddy-mainbar-section-title"><a name="downloads">Downloads</a></h1>
+							<div class="row">
+								<div class="col-xs-12">
+									<h3>Command Line EDDY</h3>
+									<p><code>eddy_mt-v2_5_2.jar</code> is a runnable JAR file that can be used to run a single instance of EDDY from the command line. This can now be run over multiple gene sets. </p>
+									<a class="btn btn-primary eddy-download-link" href="./EDDY_temp/Home_files/eddy_mt-v2_5_2.jar"><span class="glyphicon glyphicon-download-alt"></span> Download eddy_mt-v2_5_2.jar</a>
+								</div>
+							</div>
+						</div>
+						<div class="eddy-mainbar-section">
+							<h1 class="eddy-mainbar-section-title"><a name="system-requirements">System Requirements</a></h1>
+							<p>Programs were implemented and tested on Java version 1.6.0. Requires Java virtual machine 1.6.0 or higher.</p>
+						</div>
+						<div class="eddy-mainbar-section">
+							<h1 class="eddy-mainbar-section-title"><a name="file-formats">File Formats</a></h1>
+							<div class="row"><div class="col-xs-12">
+								<h3>Input data file</h3><p>The input data file is a tab-delimited text file. Each row is a variable and each column is a sample. It needs both of row and column headers for variable names and sample names. Variable values should be categorial. The following file is a sample input data file:</p>
+								<div class="row eddy-download-module-small">
+									<div class="col-sm-5"><a class="btn btn-primary eddy-download-link-small eddy-download-link" href="./EDDY_temp/Home_files/TCGA_GBM_mRNA_discrete_HGNC.txt"><span class="glyphicon glyphicon-download-alt"></span> TCGA_GBM_mRNA_discrete_HGNC.txt</a></div>
+									<div class="col-sm-7 eddy-download-description">Glioblastoma gene expression data from The Cancer Genome Atlas (TCGA). Refer the publication for preprocessing information.</div>
+								</div>
+							</div></div>
+							<div class="row"><div class="col-xs-12">
+								<h3>Sample class information file</h3><p>The sample class information file is a tab-delimited single line text file. Two-class information needs to be listed in the order of samples from the input data file. The following file is an example of a sample class information file:</p>
+								<div class="row eddy-download-module-small">
+									<div class="col-sm-3"><a class="btn btn-primary eddy-download-link-small eddy-download-link" href="./EDDY_temp/Home_files/Proneural.txt"><span class="glyphicon glyphicon-download-alt"></span> Proneural.txt</a></div>
+									<div class="col-sm-9 eddy-download-description">Sample class information with Proneural subtype versus the other subtypes.</div>
+								</div>
+							</div></div>
+							<div class="row"><div class="col-xs-12">
+								<h3>Gene set file (for test)</h3><p>The gene set file is a tab-delimited mutiple line text file where each line provides the name of the gene set, source URL and gene names (or variable names for general applications). The following file is a sample combined gene set file:</p>
+								<div class="row eddy-download-module-list">
+									<div class="col-sm-12"><a class="btn btn-primary eddy-download-link-small eddy-download-link" href="./EDDY_temp/Home_files/c2.cp.v4.0.symbols.gmt.txt"><span class="glyphicon glyphicon-download-alt"></span> c2.cp.v4.0.symbols.gmt.txt</a></div>
+								</div>
+							</div></div>
+						</div>
+						<div class="eddy-mainbar-section">
+							<h1 class="eddy-mainbar-section-title"><a name="operating-the-cli">Operating the Command Line EDDY Program</a></h1>
+							<p>For command line options, execute the following command:</p>
+							<div class="well">
+								<code>% java -jar eddy_mt-v2_5_2.jar</code>
+							</div>
+							<p>You may use the following options with the command:</p>
+							<table class="eddy-table-o-variables">
+								<tr>
+									<td class="sp-eddy-cli-variable-names"><code>-d</code></td>
+									<td>input data file</td>
+								</tr>
+								<tr>
+									<td class="sp-eddy-cli-variable-names"><code>-g</code></td>
+									<td>gene set list file</td>
+								</tr>
+								<tr>
+									<td class="sp-eddy-cli-variable-names"><code>-c</code></td>
+									<td>class information file</td>
+								</tr>
+								<tr>
+									<td class="sp-eddy-cli-variable-names"><code>-edf</code></td>
+									<td>edge-direction fixed boolean parameter</td>
+								</tr>
+								<tr>
+									<td class="sp-eddy-cli-variable-names"><code>-m</code></td>
+									<td>minimum gene set size for analysis. Default = -1 for no limit.</td>
+								</tr>
+								<tr>
+									<td class="sp-eddy-cli-variable-names"><code>-M</code></td>
+									<td>maximum gene set size for analysis. Default = -1 for no limit.</td>
+								</tr>
+								<tr>
+									<td class="sp-eddy-cli-variable-names"><code>-mp</code></td>
+									<td>maximum number of parents for each node</td>
+								</tr>
+								<tr>
+									<td class="sp-eddy-cli-variable-names"><code>-mt</code></td>
+									<td>number of threads to use</td>
+								</tr>
+								<tr>
+									<td class="sp-eddy-cli-variable-names"><code>-p</code></td>
+									<td>pvalue threshold for independence testing. [default = 0.05]</td>
+								</tr>
+								<tr>
+									<td class="sp-eddy-cli-variable-names"><code>-qp</code></td>
+									<td>Quick permutations enabled -- permutation stopswhen there is no possibility to yield p-value less than given threshold.</td>
+								</tr>
+								<tr>
+									<td class="sp-eddy-cli-variable-names"><code>-s</code></td>
+									<td>number network structures to consider [default = LOO (-1)]</td>
+								</tr>
+								<tr>
+									<td class="sp-eddy-cli-variable-names"><code>-r</code></td>
+									<td>number of permutations for statistical significance testing. [default = 1000]</td>
+								</tr>
+							</table>
+							<p>The following is an example command:</p>
+							<div class="well">
+								<code>% java -jar eddy_mt-v2_5_2.jar -d TCGA_GBM_mRNA_discrete_HGNC.txt -g c2.cp.v4.0.symbols.gmt.txt -c Proneural.txt -m 5 -M 50 -r 1000</code>
+							</div>
+							<p>In case of low memory error (<code>java.lang.OutOfMemoryError Exception</code>, from Java heap space), use <code>-Xmx</code> option for Java virtual machine to increase the amount of memory. For example:</p>
+							<div class="well">
+								<code>% java -Xmx8196m -jar eddy_mt-v2_5_2.jar</code><br/>
+								(Use up to 8196MB heap space for this execution of <code>eddy_mt-v2_5_2.jar)</code>.)
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-12 col-md-3 eddy-sidebar">
+						<ul class="eddy-sidebar-nav">
+							<a href="#what-is-eddy" class="eddy-sidebar-nav-link"><li>What is EDDY?</li></a>
+							<a href="#downloads" class="eddy-sidebar-nav-link"><li>Downloads</li></a>
+							<a href="#system-requirements" class="eddy-sidebar-nav-link"><li>System Requirements</li></a>
+							<a href="#file-formats" class="eddy-sidebar-nav-link"><li>File Formats</li></a>
+							<a href="#operating-the-cli" class="eddy-sidebar-nav-link"><li>Operating the Command Line Interface</li></a>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12 eddy-footer jumbotron ">
+				<p>Attribution Information here!</p>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

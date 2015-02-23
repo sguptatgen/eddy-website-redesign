@@ -1,4 +1,8 @@
-<!--Add in Zero Clipboard for copying of code http://zeroclipboard.org/-->
+<!--Designed by Shrey Gupta from the Translational Genomics Research Institute in 2015 for Dr. Seungchan Kim. The following code was made using a template created by Shrey Gupta and protected under the GNU GPL v.2.0 License.-->
+
+<!--TODO: 
+	1) Add in Zero Clipboard for copying of code http://zeroclipboard.org/
+-->
 
 <!DOCTYPE html>
 <html>
@@ -7,113 +11,8 @@
 	<script src="./assets/jquery/jquery-1.x-min.js"></script>
 	<script src="./assets/bootstrap/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="./assets/bootstrap/css/bootstrap.min.css" />
-	<script>
-		$(document).ready(function(){
-			var sidebarOffsetTop = $('.eddy-sidebar ul').offset().top;
-			$(window).scroll(function(){
-				var windowScrollTop = $(window).scrollTop();
-				if (windowScrollTop > sidebarOffsetTop) $('.eddy-sidebar ul').addClass('eddy-sidebar-fixed');
-				else $('.eddy-sidebar ul').removeClass('eddy-sidebar-fixed');
-			});
-		});	
-	</script>
-	<style>
-		@media (max-width: 992px) {
-			.eddy-sidebar {
-				display: none !important;
-			}
-		}
-		.eddy-banner.jumbotron, .eddy-footer.jumbotron {
-			text-align: center;
-			border-radius: 0px !important;
-			background-color: rgba(111,84,153,1);
-			color:rgba(255,255,255,0.6);
-			margin-bottom: 0px;
-		}
-		.eddy-banner.jumbotron h1 {
-			color:rgba(255,255,255,1);
-			font-size: 8em;
-		}
-		.eddy-navbar.navbar {
-			margin-bottom: 0px;
-			box-shadow:0px 1px 8px rgba(0,0,0,1);
-			z-index: 10;
-		}
-		.eddy-banner.jumbotron a.eddy-link-to-research {
-			font-weight: 900;
-			color:rgba(255,255,255,0.6);
-		}
-		.eddy-content {
-			margin-top: 30px;
-			margin-bottom: 30px;
-		}
-		.eddy-sidebar ul.eddy-sidebar-fixed {
-			position: fixed;
-			top:20px;
-		}
-		.eddy-sidebar ul.eddy-sidebar-nav{
-			list-style-type: none;
-		}
-		.eddy-sidebar ul.eddy-sidebar-nav a.eddy-sidebar-nav-link li {
-			padding: 8px 5px 8px 10px;
-			font-weight: 900;
-		}
-		.eddy-sidebar ul.eddy-sidebar-nav a.eddy-sidebar-nav-link li:hover {
-			background-color: rgba(111,84,153,1);
-			border-radius: 3px;
-		}
-		.eddy-sidebar ul.eddy-sidebar-nav a.eddy-sidebar-nav-link{
-			color: rgba(100,100,100,1);
-		}
-		.eddy-sidebar ul.eddy-sidebar-nav a.eddy-sidebar-nav-link:hover{
-			color:rgba(255,255,255,0.8);
-			text-decoration: none;
-		}
-		.eddy-mainbar-section h1.eddy-mainbar-section-title a {
-			color:rgba(0,0,0,1);
-		}
-		.eddy-mainbar-section h1.eddy-mainbar-section-title a:hover{
-			text-decoration: none;
-		}
-		a.eddy-download-link {
-			background-color:rgba(0,0,0,0);
-			border:1px solid rgba(111,84,153,1);
-			color:rgba(111,84,153,1);
-		}
-		a.eddy-download-link:hover {
-			background-color:rgba(111,84,153,1);
-			border:1px solid rgba(111,84,153,1);
-			color:rgba(255,255,255,1);
-		}
-		.eddy-download-module-small.row {
-			margin: 5px 0px;
-		}
-		.eddy-download-link-small {
-			padding: 3px 6px;
-		}
-		.row.eddy-download-module-list .eddy-download-link {
-			margin:5px 0px;
-		}
-		h1.eddy-mainbar-section-title {
-			margin-top: 40px;
-		}
-		h3 {
-			margin-top: 15px;
-		}
-		.sp-eddy-mainbar-section-title-first {
-			margin-top:0px !important;
-		}
-		.eddy-table-o-variables {
-			margin-bottom: 15px;
-		}
-		.eddy-table-o-variables td{
-			padding: 5px;
-			border-right: 1px solid rgba(0,0,0,1);
-		}
-		td.sp-eddy-cli-variable-names {
-			width:60px;
-		}
-	</style>
+	<script src=".assets/scripts/common.js"></script>
+	<link rel="stylesheet" href="./assets/styles/common.css" />
 </head>
 <body>
 	<div class="container-fluid">
@@ -184,19 +83,19 @@
 								<div class="col-sm-6">
 									<h3>Command Line EDDY</h3>
 									<p><code>RunEDDY.jar</code> is a runnable JAR file that can be used to run a single instance of EDDY from the command line.</p>
-									<a class="btn btn-primary eddy-download-link" href="http://biocomputing.tgen.org/software/EDDY/Home_files/RunEDDY.jar"><span class="glyphicon glyphicon-download-alt"></span> Download RunEDDY.jar</a>
+									<a class="btn btn-primary eddy-download-link" href="./Home_files/RunEDDY.jar"><span class="glyphicon glyphicon-download-alt"></span> Download RunEDDY.jar</a>
 								</div>
 								<div class="col-sm-6">
 									<h3>EDDY API</h3>
 									<p><code>Eddy.jar</code> is an API version of the EDDY algorithm implementation.</p>
-									<a class="btn btn-primary eddy-download-link" href="http://biocomputing.tgen.org/software/EDDY/Home_files/eddy.jar"><span class="glyphicon glyphicon-download-alt"></span> Download eddy.jar</a>
+									<a class="btn btn-primary eddy-download-link" href="./Home_files/eddy.jar"><span class="glyphicon glyphicon-download-alt"></span> Download eddy.jar</a>
 								</div>
 							</div>
 							<div class="row">
 								<div class="col-xs-12">
 									<h3>Flanagan Library</h3>
 									<p>Michael Thomas Flanagan's Java Scientific Library, <code>Flanagan.jar</code>, is a required library for running EDDY. More information on the Flanagan library can be found at <a href="http://www.ee.ucl.ac.uk/~mflanaga">http://www.ee.ucl.ac.uk/~mflanaga</a>.</p>
-									<a class="btn btn-primary eddy-download-link" href="http://biocomputing.tgen.org/software/EDDY/Home_files/flanagan.jar"><span class="glyphicon glyphicon-download-alt"></span> Download flanagan.jar</a>
+									<a class="btn btn-primary eddy-download-link" href="./Home_files/flanagan.jar"><span class="glyphicon glyphicon-download-alt"></span> Download flanagan.jar</a>
 								</div>
 							</div>
 						</div>
@@ -209,28 +108,28 @@
 							<div class="row"><div class="col-xs-12">
 								<h3>Input data file</h3><p>The input data file is a tab-delimited text file. Each row is a variable and each column is a sample. It needs both of row and column headers for variable names and sample names. Variable values should be categorial. The following file is a sample input data file:</p>
 								<div class="row eddy-download-module-small">
-									<div class="col-sm-3"><a class="btn btn-primary eddy-download-link-small eddy-download-link" href="http://biocomputing.tgen.org/software/EDDY/Home_files/TCGA-GBM.txt"><span class="glyphicon glyphicon-download-alt"></span> TCGA-GBM.txt</a></div>
+									<div class="col-sm-3"><a class="btn btn-primary eddy-download-link-small eddy-download-link" href="./Home_files/TCGA-GBM.txt"><span class="glyphicon glyphicon-download-alt"></span> TCGA-GBM.txt</a></div>
 									<div class="col-sm-9 eddy-download-description">Glioblastoma gene expression data from The Cancer Genome Atlas (TCGA). Refer the publication for preprocessing information.</div>
 								</div>
 							</div></div>
 							<div class="row"><div class="col-xs-12">
 								<h3>Sample class information file</h3><p>The sample class information file is a tab-delimited single line text file. Two-class information needs to be listed in the order of samples from the input data file. The following files are examples of sample class information files:</p>
 								<div class="row eddy-download-module-small">
-									<div class="col-sm-3"><a class="btn btn-primary eddy-download-link-small eddy-download-link" href="http://biocomputing.tgen.org/software/EDDY/Home_files/Mesenchymal.txt"><span class="glyphicon glyphicon-download-alt"></span> Mesenchymal.txt</a></div>
+									<div class="col-sm-3"><a class="btn btn-primary eddy-download-link-small eddy-download-link" href="./Home_files/Mesenchymal.txt"><span class="glyphicon glyphicon-download-alt"></span> Mesenchymal.txt</a></div>
 									<div class="col-sm-9 eddy-download-description">Sample class information with Mesenchymal subtype versus the other subtypes.</div>
 								</div>
 								<div class="row eddy-download-module-small">
-									<div class="col-sm-3"><a class="btn btn-primary eddy-download-link-small eddy-download-link" href="http://biocomputing.tgen.org/software/EDDY/Home_files/Proneural.txt"><span class="glyphicon glyphicon-download-alt"></span> Proneural.txt</a></div>
+									<div class="col-sm-3"><a class="btn btn-primary eddy-download-link-small eddy-download-link" href="./Home_files/Proneural.txt"><span class="glyphicon glyphicon-download-alt"></span> Proneural.txt</a></div>
 									<div class="col-sm-9 eddy-download-description">Sample class information with Proneural subtype versus the other subtypes.</div>
 								</div>
 							</div></div>
 							<div class="row"><div class="col-xs-12">
 								<h3>Gene set file (for test)</h3><p>The gene set file is a tab-delimited single line text file with gene names (or variable names for general applications). The following files are sample gene set files:</p>
 								<div class="row eddy-download-module-list">
-									<div class="col-sm-6"><a class="btn btn-primary eddy-download-link-small eddy-download-link" href="http://biocomputing.tgen.org/software/EDDY/Home_files/ATP_DEPENDENT_DNA_HELICASE_ACTIVITY.txt"><span class="glyphicon glyphicon-download-alt"></span> ATP_DEPENDENT_DNA_HELICASE_ACTIVITY.txt</a></div>
-									<div class="col-sm-6"><a class="btn btn-primary eddy-download-link-small eddy-download-link" href="http://biocomputing.tgen.org/software/EDDY/Home_files/BIOCARTA_FEEDER_PATHWAY.txt"><span class="glyphicon glyphicon-download-alt"></span> BIOCARTA_FEEDER_PATHWAY.txt</a></div>
-									<div class="col-sm-6"><a class="btn btn-primary eddy-download-link-small eddy-download-link" href="http://biocomputing.tgen.org/software/EDDY/Home_files/BIOCARTA_TALL1_PATHWAY.txt"><span class="glyphicon glyphicon-download-alt"></span> BIOCARTA_TALL1_PATHWAY.txt</a></div>
-									<div class="col-sm-6"><a class="btn btn-primary eddy-download-link-small eddy-download-link" href="http://biocomputing.tgen.org/software/EDDY/Home_files/ST_JAK_STAT_PATHWAY.txt"><span class="glyphicon glyphicon-download-alt"></span> ST_JAK_STAT_PATHWAY.txt</a></div>
+									<div class="col-sm-6"><a class="btn btn-primary eddy-download-link-small eddy-download-link" href="./Home_files/ATP_DEPENDENT_DNA_HELICASE_ACTIVITY.txt"><span class="glyphicon glyphicon-download-alt"></span> ATP_DEPENDENT_DNA_HELICASE_ACTIVITY.txt</a></div>
+									<div class="col-sm-6"><a class="btn btn-primary eddy-download-link-small eddy-download-link" href="./Home_files/BIOCARTA_FEEDER_PATHWAY.txt"><span class="glyphicon glyphicon-download-alt"></span> BIOCARTA_FEEDER_PATHWAY.txt</a></div>
+									<div class="col-sm-6"><a class="btn btn-primary eddy-download-link-small eddy-download-link" href="./Home_files/BIOCARTA_TALL1_PATHWAY.txt"><span class="glyphicon glyphicon-download-alt"></span> BIOCARTA_TALL1_PATHWAY.txt</a></div>
+									<div class="col-sm-6"><a class="btn btn-primary eddy-download-link-small eddy-download-link" href="./Home_files/ST_JAK_STAT_PATHWAY.txt"><span class="glyphicon glyphicon-download-alt"></span> ST_JAK_STAT_PATHWAY.txt</a></div>
 								</div>
 							</div></div>
 						</div>
