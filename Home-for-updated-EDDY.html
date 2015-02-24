@@ -8,11 +8,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>EDDY: Evaluation of Dependency Differentiality</title>
+	<title>EDDY: Evaluation of Differential DependencY</title>
 	<script src="./assets/jquery/jquery-1.x-min.js"></script>
 	<script src="./assets/bootstrap/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="./assets/bootstrap/css/bootstrap.min.css" />
-	<script src=".assets/scripts/common.js"></script>
+	<script src="./assets/scripts/common.js"></script>
 	<link rel="stylesheet" href="./assets/styles/common.css" />
 </head>
 <body>
@@ -65,9 +65,8 @@
 		</div>
 		<div class="row">
 			<div class="jumbotron eddy-banner col-xs-12">
-				<h1>EDDY</h1>
-				<h2>Evaluation of Dependency Differentials</h2>
-				<p class="eddy-page-description">This page provides an updated Java implementation of an algorithm EDDY. The original version, which was presented in "<a href="http://nar.oxfordjournals.org/content/42/7/e60" class="eddy-link-to-research">EDDY: A novel statistical gene set test method to detect differential genetic dependencies</a>", can be found <a href="#">here</a>.</p>
+				<h1>EDDY: Evaluation of Differential DependencY</h1>
+				<p class="eddy-page-description">This page provides an updated Java implementation of an algorithm EDDY. The original version, which was presented in "<a href="http://nar.oxfordjournals.org/content/42/7/e60">EDDY: A novel statistical gene set test method to detect differential genetic dependencies</a>", can be found <a href="#">here</a>.</p>
 				<!--TODO: Add the link to the previous version of EDDY.-->
 			</div>
 		</div>
@@ -85,7 +84,7 @@
 								<div class="col-xs-12">
 									<h3>Command Line EDDY</h3>
 									<p><code>eddy_mt-v2_5_2.jar</code> is a runnable JAR file that can be used to run a single instance of EDDY from the command line. This can now be run over multiple gene sets. </p>
-									<a class="btn btn-primary eddy-download-link" href="./EDDY_temp/Home_files/eddy_mt-v2_5_2.jar"><span class="glyphicon glyphicon-download-alt"></span> Download eddy_mt-v2_5_2.jar</a>
+									<a class="btn btn-primary eddy-download-link" href="./Home_files/eddy_mt-v2_5_2.jar"><span class="glyphicon glyphicon-download-alt"></span> Download eddy_mt-v2_5_2.jar</a>
 								</div>
 							</div>
 						</div>
@@ -98,21 +97,21 @@
 							<div class="row"><div class="col-xs-12">
 								<h3>Input data file</h3><p>The input data file is a tab-delimited text file. Each row is a variable and each column is a sample. It needs both of row and column headers for variable names and sample names. Variable values should be categorial. The following file is a sample input data file:</p>
 								<div class="row eddy-download-module-small">
-									<div class="col-sm-5"><a class="btn btn-primary eddy-download-link-small eddy-download-link" href="./EDDY_temp/Home_files/TCGA_GBM_mRNA_discrete_HGNC.txt"><span class="glyphicon glyphicon-download-alt"></span> TCGA_GBM_mRNA_discrete_HGNC.txt</a></div>
+									<div class="col-sm-5"><a class="btn btn-primary eddy-download-link-small eddy-download-link" href="./Home_files/TCGA_GBM_mRNA_discrete_HGNC.txt"><span class="glyphicon glyphicon-download-alt"></span> TCGA_GBM_mRNA_discrete_HGNC.txt</a></div>
 									<div class="col-sm-7 eddy-download-description">Glioblastoma gene expression data from The Cancer Genome Atlas (TCGA). Refer the publication for preprocessing information.</div>
 								</div>
 							</div></div>
 							<div class="row"><div class="col-xs-12">
 								<h3>Sample class information file</h3><p>The sample class information file is a tab-delimited single line text file. Two-class information needs to be listed in the order of samples from the input data file. The following file is an example of a sample class information file:</p>
 								<div class="row eddy-download-module-small">
-									<div class="col-sm-3"><a class="btn btn-primary eddy-download-link-small eddy-download-link" href="./EDDY_temp/Home_files/Proneural.txt"><span class="glyphicon glyphicon-download-alt"></span> Proneural.txt</a></div>
+									<div class="col-sm-3"><a class="btn btn-primary eddy-download-link-small eddy-download-link" href="./Home_files/Proneural.txt"><span class="glyphicon glyphicon-download-alt"></span> Proneural.txt</a></div>
 									<div class="col-sm-9 eddy-download-description">Sample class information with Proneural subtype versus the other subtypes.</div>
 								</div>
 							</div></div>
 							<div class="row"><div class="col-xs-12">
 								<h3>Gene set file (for test)</h3><p>The gene set file is a tab-delimited mutiple line text file where each line provides the name of the gene set, source URL and gene names (or variable names for general applications). The following file is a sample combined gene set file:</p>
 								<div class="row eddy-download-module-list">
-									<div class="col-sm-12"><a class="btn btn-primary eddy-download-link-small eddy-download-link" href="./EDDY_temp/Home_files/c2.cp.v4.0.symbols.gmt.txt"><span class="glyphicon glyphicon-download-alt"></span> c2.cp.v4.0.symbols.gmt.txt</a></div>
+									<div class="col-sm-12"><a class="btn btn-primary eddy-download-link-small eddy-download-link" href="./Home_files/c2.cp.v4.0.symbols.gmt.txt"><span class="glyphicon glyphicon-download-alt"></span> c2.cp.v4.0.symbols.gmt.txt</a></div>
 								</div>
 							</div></div>
 						</div>
@@ -182,7 +181,29 @@
 								<code>% java -Xmx8196m -jar eddy_mt-v2_5_2.jar</code><br/>
 								(Use up to 8196MB heap space for this execution of <code>eddy_mt-v2_5_2.jar)</code>.)
 							</div>
+							<p>Based on the specified size limits (<code>-m</code> and <code>-M</code> options), EDDY constructs a list of gene sets and sorts it from largest to smallest. An EDDY process is generated for each gene set and distributed to the next available thread in round robin fashion.</p>
 						</div>
+						<div class="eddy-mainbar-section">
+							<h1 class="eddy-mainbar-section-title"><a name="post-processing-eddy-output">Post Processing EDDY Output</a></h1>
+							<p>For gene sets that meet the p-value criterion, EDDY generates four files:</p>
+							<ol>
+								<li>A <code>Network.txt</code> file specifying all the network configurations that were analyzed</li>
+								<li>A <code>summary.txt</code> file, listing the probabilities of these networks</li>
+								<li>An adjacency matrix representing a composite of the most likely network configurations</li>
+								<li>An <code>Edgelist.txt</code> file for this same composite network</li>
+							</ol>
+							<p>For display purposes, an additional <code>Nodes.txt</code> file can be generated, which gives the ratio of interaction types on incoming edges for each node. A python script to create this is provided <a href="./Home_files/edge_counter.py">here</a>. It is invoked as:</p>
+						</div>
+						<div class="well">
+							<code>% python edge_count.py PATHWAYNAME_Edgelist.txt</code><br/>
+						</div>
+						<p>To display a network configuration for a specific geneset using <a href="http://www.cytoscape.org/">Cytoscape 3.2</a>.</p>
+						<ol>
+							<li>Choose "Network from File" and select the <code>Edgelist.txt</code> for the specific geneset. Choose the interaction from column 3 and source/destination columns 1 &amp; 2. To avoid skipping the first line, it will work if you check the "Show text file import options" box and then uncheck "Space". The top line of the file will now appear in the edge list.</li>
+							<li>Go to import <kbd>File</kbd> &#8594; <kbd>Import</kbd> &#8594; <kbd>Table</kbd> &#8594; <kbd>File</kbd> and import the "Nodes" file. Then click "OK."</li>
+							<li>Under <kbd>Style</kbd> &#8594; <kbd>Edge</kbd> &#8594; <kbd>Stroke Color</kbd>, set Column to "Interaction" and Mapping Type to "Discrete Mapping" and assign a color to each interaction by clicking on the right edge of each cell.</li>
+							<li>Now, under <kbd>Style</kbd> &#8594; <kbd>Node</kbd> &#8594; <kbd>Border Color</kbd>, set Column to one of the ratio columns and Mapping Type to "Discrete Mapping” and assign colors consistent with the edge colors you picked. </li>
+						</ol>
 					</div>
 					<div class="col-xs-12 col-md-3 eddy-sidebar">
 						<ul class="eddy-sidebar-nav">
@@ -191,6 +212,7 @@
 							<a href="#system-requirements" class="eddy-sidebar-nav-link"><li>System Requirements</li></a>
 							<a href="#file-formats" class="eddy-sidebar-nav-link"><li>File Formats</li></a>
 							<a href="#operating-the-cli" class="eddy-sidebar-nav-link"><li>Operating the Command Line Interface</li></a>
+							<a href="#post-processing-eddy-output" class="eddy-sidebar-nav-link"><li>Post-processing EDDY Output</li></a>
 						</ul>
 					</div>
 				</div>
