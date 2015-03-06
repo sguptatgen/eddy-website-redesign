@@ -6,12 +6,13 @@
 .eddy-banner.jumbotron, .eddy-footer.jumbotron {
 	text-align: center;
 	border-radius: 0px !important;
-	background-color: rgba(111,84,153,1);
+	background-color: rgba(94,48,160,1);
 	color:rgba(255,255,255,0.6);
 	margin-bottom: 0px;
 }
 .eddy-banner.jumbotron h1 {
 	color:rgba(255,255,255,1);
+	font-size: 3.5em;
 }
 .eddy-navbar.navbar {
 	margin-bottom: 0px;
@@ -38,7 +39,7 @@
 	font-weight: 900;
 }
 .eddy-sidebar ul.eddy-sidebar-nav a.eddy-sidebar-nav-link li:hover {
-	background-color: rgba(111,84,153,1);
+	background-color: rgba(94,48,160,1);
 	border-radius: 3px;
 }
 .eddy-sidebar ul.eddy-sidebar-nav a.eddy-sidebar-nav-link{
@@ -56,12 +57,12 @@
 }
 a.eddy-download-link {
 	background-color:rgba(0,0,0,0);
-	border:1px solid rgba(111,84,153,1);
-	color:rgba(111,84,153,1);
+	border:1px solid rgba(94,48,160,1);
+	color:rgba(94,48,160,1);
 }
 a.eddy-download-link:hover {
-	background-color:rgba(111,84,153,1);
-	border:1px solid rgba(111,84,153,1);
+	background-color:rgba(94,48,160,1);
+	border:1px solid rgba(94,48,160,1);
 	color:rgba(255,255,255,1);
 }
 .eddy-download-module-small.row {
@@ -91,4 +92,12 @@ h3 {
 }
 td.sp-eddy-cli-variable-names {
 	width:60px;
+}
+div.eddy-picture-caption {
+	font-style:italic;
+	font-size:0.75em;
+}
+div.eddy-footer.jumbotron a {
+	color: rgba(255,255,255,0.6);
+	font-weight:900;
 }

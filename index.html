@@ -6,12 +6,15 @@
 -->
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>EDDY: Evaluation of Differential DependencY</title>
 	<script src="./assets/jquery/jquery-1.x-min.js"></script>
-	<script src="./assets/bootstrap/js/bootstrap.min.js"></script>
-	<link rel="stylesheet" href="./assets/bootstrap/css/bootstrap.min.css" />
+	<script src="./assets/bs3css/js/bs3.min.js"></script>
+	<link rel="stylesheet" href="./assets/bs3css/css/bs3.min.css" />
 	<script src="./assets/scripts/common.js"></script>
 	<link rel="stylesheet" href="./assets/styles/common.css" />
 </head>
@@ -27,11 +30,11 @@
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
-						<a class="navbar-brand" href="#">EDDY</a>
+						<a class="navbar-brand" href="Home.html">EDDY</a>
 					</div>
 					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 						<ul class="nav navbar-nav">
-							<li class="active"><a href="#">Some Link<span class="sr-only">(current)</span></a></li>
+							<li class="active"><a href="EDDY_old.html">OLD EDDY<span class="sr-only">(current)</span></a></li>
 							<li><a href="#">Some Link</a></li>
 							<li class="dropdown">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Some Dropdown<span class="caret"></span></a>
@@ -66,8 +69,7 @@
 		<div class="row">
 			<div class="jumbotron eddy-banner col-xs-12">
 				<h1>EDDY: Evaluation of Differential DependencY</h1>
-				<p class="eddy-page-description">This page provides an updated Java implementation of an algorithm EDDY. The original version, which was presented in "<a href="http://nar.oxfordjournals.org/content/42/7/e60">EDDY: A novel statistical gene set test method to detect differential genetic dependencies</a>", can be found <a href="#">here</a>.</p>
-				<!--TODO: Add the link to the previous version of EDDY.-->
+				<p class="eddy-page-description">This page provides an updated Java implementation of an algorithm EDDY. The original version, which was presented in "<a href="http://nar.oxfordjournals.org/content/42/7/e60">EDDY: A novel statistical gene set test method to detect differential genetic dependencies</a>", can be found <a href="EDDY_old.html">here</a>.</p>
 			</div>
 		</div>
 		<div class="row">
@@ -84,7 +86,7 @@
 								<div class="col-xs-12">
 									<h3>Command Line EDDY</h3>
 									<p><code>eddy_mt-v2_5_2.jar</code> is a runnable JAR file that can be used to run a single instance of EDDY from the command line. This can now be run over multiple gene sets. </p>
-									<a class="btn btn-primary eddy-download-link" href="./Home_files/eddy_mt-v2_5_2.jar"><span class="glyphicon glyphicon-download-alt"></span> Download eddy_mt-v2_5_2.jar</a>
+									<a class="btn btn-primary eddy-download-link" href="./download/v2_5_2/eddy_mt-v2_5_2.jar"><span class="glyphicon glyphicon-download-alt"></span> Download eddy_mt-v2_5_2.jar</a>
 								</div>
 							</div>
 						</div>
@@ -97,21 +99,21 @@
 							<div class="row"><div class="col-xs-12">
 								<h3>Input data file</h3><p>The input data file is a tab-delimited text file. Each row is a variable and each column is a sample. It needs both of row and column headers for variable names and sample names. Variable values should be categorial. The following file is a sample input data file:</p>
 								<div class="row eddy-download-module-small">
-									<div class="col-sm-5"><a class="btn btn-primary eddy-download-link-small eddy-download-link" href="./Home_files/TCGA_GBM_mRNA_discrete_HGNC.txt"><span class="glyphicon glyphicon-download-alt"></span> TCGA_GBM_mRNA_discrete_HGNC.txt</a></div>
+									<div class="col-sm-5"><a class="btn btn-primary eddy-download-link-small eddy-download-link" href="./download/v2_5_2/TCGA_GBM_mRNA_discrete_HGNC.txt"><span class="glyphicon glyphicon-download-alt"></span> TCGA_GBM_mRNA_discrete_HGNC.txt</a></div>
 									<div class="col-sm-7 eddy-download-description">Glioblastoma gene expression data from The Cancer Genome Atlas (TCGA). Refer the publication for preprocessing information.</div>
 								</div>
 							</div></div>
 							<div class="row"><div class="col-xs-12">
 								<h3>Sample class information file</h3><p>The sample class information file is a tab-delimited single line text file. Two-class information needs to be listed in the order of samples from the input data file. The following file is an example of a sample class information file:</p>
 								<div class="row eddy-download-module-small">
-									<div class="col-sm-3"><a class="btn btn-primary eddy-download-link-small eddy-download-link" href="./Home_files/Proneural.txt"><span class="glyphicon glyphicon-download-alt"></span> Proneural.txt</a></div>
+									<div class="col-sm-3"><a class="btn btn-primary eddy-download-link-small eddy-download-link" href="./download/v2_5_2/Proneural.txt"><span class="glyphicon glyphicon-download-alt"></span> Proneural.txt</a></div>
 									<div class="col-sm-9 eddy-download-description">Sample class information with Proneural subtype versus the other subtypes.</div>
 								</div>
 							</div></div>
 							<div class="row"><div class="col-xs-12">
 								<h3>Gene set file (for test)</h3><p>The gene set file is a tab-delimited mutiple line text file where each line provides the name of the gene set, source URL and gene names (or variable names for general applications). The following file is a sample combined gene set file:</p>
 								<div class="row eddy-download-module-list">
-									<div class="col-sm-12"><a class="btn btn-primary eddy-download-link-small eddy-download-link" href="./Home_files/c2.cp.v4.0.symbols.gmt.txt"><span class="glyphicon glyphicon-download-alt"></span> c2.cp.v4.0.symbols.gmt.txt</a></div>
+									<div class="col-sm-12"><a class="btn btn-primary eddy-download-link-small eddy-download-link" href="./download/v2_5_2/c2.cp.v4.0.symbols.gmt.txt"><span class="glyphicon glyphicon-download-alt"></span> c2.cp.v4.0.symbols.gmt.txt</a></div>
 								</div>
 							</div></div>
 						</div>
@@ -192,7 +194,7 @@
 								<li>An adjacency matrix representing a composite of the most likely network configurations</li>
 								<li>An <code>Edgelist.txt</code> file for this same composite network</li>
 							</ol>
-							<p>For display purposes, an additional <code>Nodes.txt</code> file can be generated, which gives the ratio of interaction types on incoming edges for each node. A python script to create this is provided <a href="./Home_files/edge_counter.py">here</a>. It is invoked as:</p>
+							<p>For display purposes, an additional <code>Nodes.txt</code> file can be generated, which gives the ratio of interaction types on incoming edges for each node. A python script to create this is provided <a href="./download/v2_5_2/edge_counter.py">here</a>. It is invoked as:</p>
 						</div>
 						<div class="well">
 							<code>% python edge_count.py PATHWAYNAME_Edgelist.txt</code><br/>
@@ -202,8 +204,13 @@
 							<li>Choose "Network from File" and select the <code>Edgelist.txt</code> for the specific geneset. Choose the interaction from column 3 and source/destination columns 1 &amp; 2. To avoid skipping the first line, it will work if you check the "Show text file import options" box and then uncheck "Space". The top line of the file will now appear in the edge list.</li>
 							<li>Go to import <kbd>File</kbd> &#8594; <kbd>Import</kbd> &#8594; <kbd>Table</kbd> &#8594; <kbd>File</kbd> and import the "Nodes" file. Then click "OK."</li>
 							<li>Under <kbd>Style</kbd> &#8594; <kbd>Edge</kbd> &#8594; <kbd>Stroke Color</kbd>, set Column to "Interaction" and Mapping Type to "Discrete Mapping" and assign a color to each interaction by clicking on the right edge of each cell.</li>
-							<li>Now, under <kbd>Style</kbd> &#8594; <kbd>Node</kbd> &#8594; <kbd>Border Color</kbd>, set Column to one of the ratio columns and Mapping Type to "Discrete Mapping” and assign colors consistent with the edge colors you picked. </li>
+							<li>Now, under <kbd>Style</kbd> &#8594; <kbd>Node</kbd> &#8594; <kbd>Border Paint</kbd>, set Column to one of the ratio columns and Mapping Type to "Continuous Mapping” and click on the color map.  Clicking on the small triangles ("handles") on the top sets the colors.  Keep these consistent with the edge colors you picked.  Slide left triangle all the way left.  Move the second one to the center and assign a neutral (e.g. grey) color.  <kbd>Add</kbd> another triangle and shift it all the way right.</li>
 						</ol>
+						<p>This should create a network image like pictured below.</p>
+					<img src="assets/imgs/sample_graph.png">
+					<div class="eddy-mainbar-section">
+					<h1 class="eddy-mainbar-section-title"><a name="Acknowledgements">Acknowledgements</a></h1>
+					<p>The development of the software EDDY was partly funded by National Cancer Institute, National Institutes of Health (NIH) [29XS195 — In-Silico Research Center of Excellence (<a href="http://cabig.cancer.gov/action/collaborations/isrc/">ISRCE</a>), 1U01CA168397-01 — Center for Target Discovery and Development (<a href="https://ocg.cancer.gov/programs/ctd2">CTD2</a>) / Targeted Treatment for Tumors (<a href="https://www.tgen.org/home/research/research-divisions/cancer-and-cell-biology/targeted-treatments-for-tumors-(t3).aspx">T3</a>)].</p></div>
 					</div>
 					<div class="col-xs-12 col-md-3 eddy-sidebar">
 						<ul class="eddy-sidebar-nav">
@@ -220,7 +227,8 @@
 		</div>
 		<div class="row">
 			<div class="col-xs-12 eddy-footer jumbotron ">
-				<p>Attribution Information here!</p>
+<p><a href="https://www.tgen.org/home/research/research-divisions/integrated-cancer-genomics.aspx">Integrated Cancer Genomics Division <span class="glyphicon glyphicon-link"></span></a></p>
+				<p><a href="http://www.tgen.org"><img src="assets/imgs/TGen_Color_LOGO_medium.png"><span class="glyphicon glyphicon-link"></span></a></p>
 			</div>
 		</div>
 	</div>
